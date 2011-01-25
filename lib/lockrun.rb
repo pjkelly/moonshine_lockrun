@@ -29,8 +29,8 @@ private
   # to the cron helper method:
   #
   #     cron 'my:cool:job', :command => lockrun_wrapped_command('/path/to/my/command work'), :user => configuration[:user], :minute => 55
-  def lockrun_wrapped_command(command, options = {})
-    options = options.respond_to?(:to_hash) ? options.to_hash : {}
+  def lockrun_wrapped_command(command)
+    options = configuration[:lockrun]
 
     command_options = []
     command_options << "--lockfile=/tmp/#{MD5.hexdigest(command)}.lockrun"
