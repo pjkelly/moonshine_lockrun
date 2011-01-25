@@ -1,13 +1,15 @@
 = Moonshine Lockrun
 
-=== A plugin for Moonshine[http://github.com/railsmachine/moonshine]
+=== A plugin for Moonshine[https://github.com/railsmachine/moonshine]
 
-A plugin for installing and managing lockrun.
+A plugin for installing and managing lockrun[https://github.com/pushcx/lockrun].
 
 === Instructions
 
-* <tt>script/plugin install git://github.com/ACCOUNT/moonshine_lockrun.git</tt>
+* <tt>script/plugin install git://github.com/pjkelly/moonshine_lockrun.git</tt>
 * Configure settings if needed
-    configure(:lockrun => {:foo => true})
+    configure(:lockrun => {:idempotent => true})
 * Invoke the recipe(s) in your Moonshine manifest
     recipe :lockrun
+* Use the helper method for generating commands wrapped by lockrun:
+    lockrun_wrapped_command('/path/to/my/command')

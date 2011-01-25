@@ -1,7 +1,6 @@
 require 'md5'
 
 module Lockrun
-
   # Define options for this plugin via the <tt>configure</tt> method
   # in your application manifest (none are needed by default):
   #
